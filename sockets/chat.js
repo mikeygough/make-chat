@@ -38,4 +38,11 @@ module.exports = (io, socket, onlineUsers, channels) => {
       messages: channels[newChannel],
     });
   });
+  socket.on('user changed channel', (newChannel) => {
+    socket.join(newChannel);
+    socket.emit('user changed channel', {
+      channel: newChannel,
+      messages: channels[newChannel],
+    });
+  });
 };
