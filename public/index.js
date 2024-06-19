@@ -5,6 +5,8 @@ $(document).ready(() => {
   let currentUser;
   // Get the online users from the server
   socket.emit('get online users');
+  // Get the channels from the server
+  socket.emit('get channels');
   //Each user should be in the general channel by default.
   socket.emit('user changed channel', 'General');
 
