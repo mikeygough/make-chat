@@ -20,4 +20,7 @@ module.exports = (io, socket, onlineUsers) => {
     delete onlineUsers[socket.username];
     io.emit('user has left', onlineUsers);
   });
+  socket.on('new channel', (newChannel) => {
+    console.log(newChannel);
+  });
 };
